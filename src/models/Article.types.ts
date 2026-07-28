@@ -56,20 +56,3 @@ export interface FiltersResponse {
   country_codes: CountryCount[];
   sentiments: SentimentCount[];
 }
-
-export interface IngestionEndpointSummary {
-  endpoint: string;
-  status: "success" | "error";
-  fetched?: number;
-  new?: number;
-  duplicated?: number;
-  filtered_noise?: number;
-  error?: string;
-}
-
-export interface IngestionRunResponse {
-  status: "updated" | "cooldown";
-  message: string;
-  next_update_in: string;
-  summary?: IngestionEndpointSummary[];
-}

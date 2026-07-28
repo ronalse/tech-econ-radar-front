@@ -6,21 +6,18 @@ import { SideNavBar } from "@/modules/Dashboard/components/SideNavBar";
 import { StatusFooter } from "@/modules/Dashboard/components/StatusFooter";
 
 interface DashboardShellProps {
-  isRunning: boolean;
-  nextUpdateIn: string | null;
-  onUpdate: () => void;
   children: ReactNode;
 }
 
 /**
  * Layout compartido entre todas las rutas del dashboard (/, /map,
  * /analytics, /feed). Cada pagina trae sus propios datos (hooks) y
- * solo le pasa el estado de ingesta + su contenido especifico.
+ * solo le pasa su contenido especifico.
  */
-export function DashboardShell({ isRunning, nextUpdateIn, onUpdate, children }: DashboardShellProps) {
+export function DashboardShell({ children }: DashboardShellProps) {
   return (
     <div className="flex flex-col h-screen overflow-hidden">
-      <TopNavBar isRunning={isRunning} nextUpdateIn={nextUpdateIn} onUpdate={onUpdate} />
+      <TopNavBar />
 
       <div className="flex flex-1 overflow-hidden">
         <SideNavBar />

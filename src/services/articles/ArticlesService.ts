@@ -1,9 +1,5 @@
-import { apiGet, apiPost } from "@/services/core/api";
-import type {
-  ArticlesResponse,
-  FiltersResponse,
-  IngestionRunResponse,
-} from "@/models/Article.types";
+import { apiGet } from "@/services/core/api";
+import type { ArticlesResponse, FiltersResponse } from "@/models/Article.types";
 
 /**
  * ArticlesService: SOLO llamadas HTTP, sin transformar datos.
@@ -17,9 +13,5 @@ export const ArticlesService = {
 
   getFilters(): Promise<FiltersResponse> {
     return apiGet<FiltersResponse>("/filters/get_all");
-  },
-
-  triggerIngestion(): Promise<IngestionRunResponse> {
-    return apiPost<IngestionRunResponse>("/ingestion/run");
   },
 };
