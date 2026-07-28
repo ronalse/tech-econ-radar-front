@@ -156,7 +156,7 @@ export function Globe3D({ pins, earthquakes, showEarthquakes }: Globe3DProps) {
             meta,
           };
         }),
-      } as echarts.SeriesOption,
+      } as unknown as echarts.SeriesOption,
     ];
 
     if (showEarthquakes) {
@@ -180,7 +180,7 @@ export function Globe3D({ pins, earthquakes, showEarthquakes }: Globe3DProps) {
             meta,
           };
         }),
-      } as echarts.SeriesOption);
+      } as unknown as echarts.SeriesOption);
     }
 
     chartRef.current.setOption({ series }, { replaceMerge: ["series"] });

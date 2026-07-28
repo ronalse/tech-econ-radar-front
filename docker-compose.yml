@@ -1,0 +1,13 @@
+services:
+  front:
+    build:
+      context: .
+      args:
+        # NEXT_PUBLIC_* se hornea en el build, no se puede cambiar en runtime.
+        # El navegador corre en el host, así que localhost:8000 llega al
+        # contenedor de back/docker-compose.yml (expuesto en ese puerto).
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+    container_name: tech_econ_radar_front
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
