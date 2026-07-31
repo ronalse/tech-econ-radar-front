@@ -2,3 +2,14 @@ node_modules/
 .next/
 .env*
 .git/
+.gitignore
+.claude/
+.vscode/
+.idea/
+*.md
+Dockerfile
+docker-compose.yml
+.dockerignore
+tsconfig.tsbuildinfo
+npm-debug.log*
+coverage/

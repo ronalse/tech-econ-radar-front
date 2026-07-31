@@ -21,7 +21,9 @@ export function DashboardShell({ children }: DashboardShellProps) {
 
       <div className="flex flex-1 overflow-hidden">
         <SideNavBar />
-        <main className="ml-24 mr-4 my-4 flex-1 flex gap-4 overflow-hidden">{children}</main>
+        <main className="ml-0 md:ml-24 mr-2 md:mr-4 my-2 md:my-4 pb-20 md:pb-0 flex-1 flex flex-col lg:flex-row gap-4 overflow-hidden">
+          {children}
+        </main>
       </div>
 
       <StatusFooter />

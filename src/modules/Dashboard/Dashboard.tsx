@@ -20,7 +20,7 @@ export function Dashboard() {
 
   return (
     <DashboardShell>
-      <section className="flex-1 relative rounded-xl overflow-hidden bg-surface-container-lowest border border-outline-variant/30 shadow-inner">
+      <section className="h-[45vh] lg:h-auto shrink-0 lg:shrink lg:flex-1 relative rounded-xl overflow-hidden bg-surface-container-lowest border border-outline-variant/30 shadow-inner">
         <WorldMap pins={mapPins} />
         <MapLegend />
         <MapSummaryBar
@@ -32,8 +32,8 @@ export function Dashboard() {
         />
       </section>
 
-      <section className="w-[380px] h-full flex flex-col gap-4 min-h-0">
-        <div className="h-[35%]">
+      <section className="flex-1 min-h-0 lg:flex-none lg:w-[380px] lg:h-full flex flex-col gap-4">
+        <div className="h-[35%] shrink-0">
           <CategoryChart
             categories={categories}
             totalSignals={totalSignals}

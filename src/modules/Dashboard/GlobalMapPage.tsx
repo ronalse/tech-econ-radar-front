@@ -36,7 +36,7 @@ export function GlobalMapPage() {
         <button
           type="button"
           onClick={() => setShowEarthquakes((prev) => !prev)}
-          className={`absolute top-6 right-6 px-4 py-2 rounded-xl font-label-md border shadow-lg transition-all ${
+          className={`absolute top-3 right-3 md:top-6 md:right-6 px-3 py-1.5 md:px-4 md:py-2 rounded-xl font-label-sm md:font-label-md border shadow-lg transition-all ${
             showEarthquakes
               ? "bg-tertiary/20 text-tertiary border-tertiary/40"
               : "bg-surface-container-high/90 text-on-surface-variant border-outline-variant/30 hover:text-on-surface"

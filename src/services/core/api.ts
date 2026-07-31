@@ -1,5 +1,5 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000";
-
+const API_URL = ( process.env.NEXT_PUBLIC_API_KEY || "http://127.0.0.1:8000" );
+// si falla el api key, se asume que estamos en local y se apunta al backend local. Esto es util para desarrollo y testing.
 export class ApiError extends Error {
   status: number;
 
