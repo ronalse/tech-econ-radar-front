@@ -1,4 +1,19 @@
-const API_URL = ( process.env.NEXT_PUBLIC_API_KEY || "http://127.0.0.1:8000" );
+/// leemos el path, si el front esta en localhost, apuntamos al backend local. Esto es util para desarrollo y testing
+
+let API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+
+const isLocalhost = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+
+if (isLocalhost) {
+// sustituimos la url de APIURL por la de APIKEY, que apunta al backend local
+  if (API_KEY) {
+    API_URL = API_KEY;
+  } else {
+    console.warn("No se encontró NEXT_PUBLIC_API_KEY en .env.local. Asegúrate de tenerlo configurado para apuntar al backend local.");
+  }
+}
+
 // si falla el api key, se asume que estamos en local y se apunta al backend local. Esto es util para desarrollo y testing.
 export class ApiError extends Error {
   status: number;
