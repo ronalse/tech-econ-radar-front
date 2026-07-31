@@ -3,7 +3,9 @@
 let API_URL = process.env.NEXT_PUBLIC_API_URL;
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
-const isLocalhost = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+const isLocalhost =
+  typeof window !== "undefined" &&
+  (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
 
 if (isLocalhost) {
 // sustituimos la url de APIURL por la de APIKEY, que apunta al backend local
